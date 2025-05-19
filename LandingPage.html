@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intan Snack Purbalingga</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header id="header">
+    <div class="header-content-div">
+      <a href="#home">
+        <img src="logo-placeholder.png" alt="Intan Snack Logo" id="header-img" />
+      </a>
+      <nav id="nav-bar">
+        <a href="#home" class="nav-link">BERANDA</a>
+        <a href="#about" class="nav-link">TENTANG</a>
+        <a href="#menu" class="nav-link">MENU</a>
+        <!-- <a href="#gallery" class="nav-link">GALERI</a> -->
+        <a href="#contact" class="nav-link">KONTAK</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="home" class="flexible home-sec">
+      <div class="eye-grabber-img">
+        <img src="hero-snack.jpg" alt="Produk Snack Intan" />
+      </div>
+      <div class="eye-grabber">
+        <h1>Snack Lezat & Terjangkau.</h1>
+        <h2>
+          Intan Snack Purbalingga – Aneka kue dan snack tradisional-modern untuk segala acara.
+        </h2>
+        <button class="btn" onclick="window.location.href = '#contact';">
+          Pesan Sekarang
+        </button>
+      </div>
+    </section>
+
+    <section id="about" class="sec-padding">
+      <h3 class="section-heading">TENTANG KAMI</h3>
+      <div class="sec-content-div flexible">
+        <p>
+          Intan Snack Purbalingga merupakan UMKM kuliner yang menyediakan aneka snack mulai dari kue basah, kering, hingga paket snack box untuk berbagai acara seperti rapat, hajatan, dan event lainnya. Usaha ini mendukung pelaku UMKM lokal dengan sistem titip jual dan telah melayani banyak pelanggan di wilayah Purbalingga dan sekitarnya.
+        </p>
+        <img src="about-snack.jpg" alt="Proses produksi snack" />
+      </div>
+    </section>
+
+    <section id="menu" class="sec-padding">
+      <h3 class="section-heading">DAFTAR MENU</h3>
+      <div class="sec-content-div flexible">
+        <div class="tile">
+          <img src="placeholder-menu1.jpg" alt="Kue Basah" />
+          <h4>Kue Basah</h4>
+          <p>Harga mulai Rp5.000/pcs</p>
+        </div>
+        <div class="tile">
+          <img src="placeholder-menu2.jpg" alt="Snack Kering" />
+          <h4>Snack Kering</h4>
+          <p>Harga mulai Rp7.000/pack</p>
+        </div>
+        <div class="tile">
+          <img src="placeholder-menu3.jpg" alt="Snack Box" />
+          <h4>Snack Box</h4>
+          <p>Paket mulai Rp15.000</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="gallery" class="sec-padding">
+      <h3 class="section-heading">GALERI</h3>
+      <div class="sec-content-div flexible">
+        <div class="tile">
+          <img src="placeholder-lokasi1.jpg" alt="Produksi Snack" />
+          <h4>Dapur Produksi</h4>
+        </div>
+        <div class="tile">
+          <img src="placeholder-lokasi2.jpg" alt="Etalase Produk" />
+          <h4>Display Produk</h4>
+        </div>
+        <div class="tile">
+          <img src="placeholder-lokasi3.jpg" alt="Pengemasan" />
+          <h4>Proses Pengemasan</h4>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="contact" class="sec-padding">
+      <h3 class="section-heading">KONTAK KAMI</h3>
+      <div class="sec-content-div flexible">
+        <h6>Hubungi kami untuk pemesanan atau informasi lebih lanjut:</h6>
+        <form id="form" action="#" method="POST">
+          <input type="email" name="email" id="email" placeholder="Alamat Email Anda" required />
+          <input type="submit" class="btn" id="submit" value="Kirim" />
+        </form>
+        <p style="margin-top:2rem">
+          WhatsApp: <a href="https://wa.me/628xxxxxxxxxx">08xxxxxxxxxx</a><br>
+          Instagram: <a href="https://www.instagram.com/intansnackpurbalingga?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">@intansnack</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Intan Snack Purbalingga | Designed by Mahasiswa Telkom University</p>
+  </footer>
+</body>
+</html>
