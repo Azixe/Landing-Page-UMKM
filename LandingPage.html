@@ -32,7 +32,7 @@
           Intan Snack Purbalingga – Aneka kue dan snack tradisional-modern untuk segala acara.
         </h2>
         <button class="btn" onclick="window.location.href = '#contact';">
-          Cek Menu!
+          Pesan Sekarang!
         </button>
       </div>
     </section>
@@ -88,16 +88,49 @@
 
     <section id="contact" class="sec-padding">
       <h3 class="section-heading">KONTAK KAMI</h3>
-      <div class="sec-content-div flexible">
-        <h>Hubungi kami untuk pemesanan atau informasi lebih lanjut:</h6>
-        <form id="form" action="#" method="POST">
-          <input type="email" name="email" id="email" placeholder="Alamat Email Anda" required />
-          <input type="submit" class="btn" id="submit" value="Kirim" />
-        </form>
-        <p style="margin-top:2rem">
-          WhatsApp: <a href="https://wa.me/628xxxxxxxxxx">08xxxxxxxxxx</a><br>
-          Instagram: <a href="https://www.instagram.com/intansnackpurbalingga?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">@intansnack</a>
-        </p>
+      
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:30px; margin-top:2rem;">
+        <!-- Map container on the left -->
+        <div class="map-container" style="flex:1; min-width:300px; max-width:600px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.6095191228633!2d109.33552947592749!3d-7.397574772837383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559e6b1f1e575%3A0x6f448345c3e3089a!2sIntan%20Snack%20Purbalingga!5e0!3m2!1sen!2sid!4v1747658920394!5m2!1sen!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <!-- WhatsApp CTA on the right -->
+        <div class="whatsapp-cta" style="flex:1; min-width:300px; max-width:600px; text-align:center; background-color:#f8f8f8; padding:30px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+          <div style="font-size:72px; margin-bottom:15px;">💬</div>
+          <h4 style="margin-bottom:15px; font-size:24px;">Pesan Melalui WhatsApp</h4>
+          <p style="margin-bottom:25px; font-size:16px;">Cara termudah untuk memesan aneka snack dan kue dari Intan Snack Purbalingga. Kami akan merespon dengan cepat!</p>
+          <a href="https://wa.link/fcu44c" style="display:inline-block; background-color:#25d366; color:white; text-decoration:none; padding:15px 40px; font-weight:bold; border-radius:30px; font-size:18px;">
+            <span style="margin-right:10px;">🔰</span>Pesan Sekarang via WhatsApp
+          </a>
+        </div>
+      </div>
+      
+      <div class="contact-info" style="margin-top:3rem; display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+        <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
+          <div style="margin-bottom:10px;">📞</div>
+          <h4>Telepon</h4>
+          <p><a href="https://wa.link/fcu44c" style="color:#e23d3d; text-decoration:none;">+62 0857-9940-7027</a></p>
+        </div>
+        
+        <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
+          <div style="margin-bottom:10px;">📸</div>
+          <h4>Instagram</h4>
+          <p><a href="https://www.instagram.com/intansnackpurbalingga/?hl=en" style="color:#e23d3d; text-decoration:none;">@intansnackpurbalingga</a></p>
+        </div>
+
+        <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
+          <div style="margin-bottom:10px;">🕒</div>
+          <h4>Jam Buka</h4>
+          <p>Senin - Sabtu: 08:00 - 17:00</p>
+          <p>Minggu: Tutup</p>
+        </div>
+        
+        <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
+          <div style="margin-bottom:10px;">📍</div>
+          <h4>Alamat</h4>
+          <p>Jl. Babakan Indah Estate No.29a, Purbalingga, Jawa Tengah</p>
+        </div>
       </div>
     </section>
   </main>
