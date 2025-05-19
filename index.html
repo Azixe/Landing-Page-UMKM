@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intan Snack Purbalingga</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <meta name="description" content="Intan Snack Purbalingga - UMKM kuliner penyedia aneka snack untuk berbagai acara di Purbalingga dan sekitarnya." />
 </head>
 <body>
   <header id="header">
@@ -12,6 +14,9 @@
       <a href="#home">
         <img src="logo-placeholder.png" alt="Intan Snack Logo" id="header-img" />
       </a>
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav id="nav-bar">
         <a href="#home" class="nav-link">BERANDA</a>
         <a href="#about" class="nav-link">TENTANG</a>
@@ -27,12 +32,12 @@
         <img src="hero-snack.jpg" alt="Produk Snack Intan" />
       </div>
       <div class="eye-grabber">
-        <h1>Snack Lezat & Terjangkau.</h1>
+        <h1>Snack Lezat & Terjangkau</h1>
         <h2>
           Intan Snack Purbalingga – Aneka kue dan snack tradisional-modern untuk segala acara.
         </h2>
         <button class="btn" onclick="window.location.href = '#contact';">
-          Pesan Sekarang!
+          <i class="fas fa-shopping-cart"></i> Pesan Sekarang!
         </button>
       </div>
     </section>
@@ -53,17 +58,20 @@
         <div class="tile">
           <img src="placeholder-menu1.jpg" alt="Kue Basah" />
           <h4>Kue Basah</h4>
-          <p>Harga mulai Rp5.000/pcs</p>
+          <p>Harga mulai <strong>Rp5.000/pcs</strong></p>
+          <p><small>Pesanan min. 50 pcs untuk varian sama</small></p>
         </div>
         <div class="tile">
           <img src="placeholder-menu2.jpg" alt="Snack Kering" />
           <h4>Snack Kering</h4>
-          <p>Harga mulai Rp7.000/pack</p>
+          <p>Harga mulai <strong>Rp7.000/pack</strong></p>
+          <p><small>Tersedia dalam berbagai ukuran kemasan</small></p>
         </div>
         <div class="tile">
           <img src="placeholder-menu3.jpg" alt="Snack Box" />
           <h4>Snack Box</h4>
-          <p>Paket mulai Rp15.000</p>
+          <p>Paket mulai <strong>Rp15.000</strong></p>
+          <p><small>Bisa request isi sesuai keinginan</small></p>
         </div>
       </div>
     </section>
@@ -89,7 +97,7 @@
     <section id="contact" class="sec-padding">
       <h3 class="section-heading">KONTAK KAMI</h3>
       
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:30px; margin-top:2rem;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:stretch; gap:30px; margin-top:2rem;">
         <!-- Map container on the left -->
         <div class="map-container" style="flex:1; min-width:300px; max-width:600px;">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.6095191228633!2d109.33552947592749!3d-7.397574772837383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559e6b1f1e575%3A0x6f448345c3e3089a!2sIntan%20Snack%20Purbalingga!5e0!3m2!1sen!2sid!4v1747658920394!5m2!1sen!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -97,37 +105,37 @@
         
         <!-- WhatsApp CTA on the right -->
         <div class="whatsapp-cta" style="flex:1; min-width:300px; max-width:600px; text-align:center; background-color:#f8f8f8; padding:30px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
-          <div style="font-size:72px; margin-bottom:15px;">💬</div>
+          <div style="font-size:72px; margin-bottom:15px;"><i class="fab fa-whatsapp"></i></div>
           <h4 style="margin-bottom:15px; font-size:24px;">Pesan Melalui WhatsApp</h4>
           <p style="margin-bottom:25px; font-size:16px;">Cara termudah untuk memesan aneka snack dan kue dari Intan Snack Purbalingga. Kami akan merespon dengan cepat!</p>
           <a href="https://wa.link/fcu44c" style="display:inline-block; background-color:#25d366; color:white; text-decoration:none; padding:15px 40px; font-weight:bold; border-radius:30px; font-size:18px;">
-            <span style="margin-right:10px;">🔰</span>Pesan Sekarang via WhatsApp
+            <i class="fab fa-whatsapp"></i> Pesan Sekarang via WhatsApp
           </a>
         </div>
       </div>
       
       <div class="contact-info" style="margin-top:3rem; display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
         <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
-          <div style="margin-bottom:10px;">📞</div>
+          <div style="margin-bottom:10px;"><i class="fas fa-phone"></i></div>
           <h4>Telepon</h4>
           <p><a href="https://wa.link/fcu44c" style="color:#e23d3d; text-decoration:none;">+62 0857-9940-7027</a></p>
         </div>
         
         <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
-          <div style="margin-bottom:10px;">📸</div>
+          <div style="margin-bottom:10px;"><i class="fab fa-instagram"></i></div>
           <h4>Instagram</h4>
           <p><a href="https://www.instagram.com/intansnackpurbalingga/?hl=en" style="color:#e23d3d; text-decoration:none;">@intansnackpurbalingga</a></p>
         </div>
 
         <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
-          <div style="margin-bottom:10px;">🕒</div>
+          <div style="margin-bottom:10px;"><i class="far fa-clock"></i></div>
           <h4>Jam Buka</h4>
           <p>Senin - Sabtu: 08:00 - 17:00</p>
           <p>Minggu: Tutup</p>
         </div>
         
         <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
-          <div style="margin-bottom:10px;">📍</div>
+          <div style="margin-bottom:10px;"><i class="fas fa-map-marker-alt"></i></div>
           <h4>Alamat</h4>
           <p>Jl. Babakan Indah Estate No.29a, Purbalingga, Jawa Tengah</p>
         </div>
@@ -137,5 +145,32 @@
   <footer>
     <p>&copy; 2025 Intan Snack Purbalingga | Designed by Mahasiswa Telkom University</p>
   </footer>
+  
+  <script>
+    // Mobile navigation toggle
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('nav-bar').classList.toggle('active');
+      
+      // Change icon based on menu state
+      const icon = this.querySelector('i');
+      if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-bar').classList.remove('active');
+        const icon = document.querySelector('.hamburger i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+    });
+  </script>
 </body>
 </html>
