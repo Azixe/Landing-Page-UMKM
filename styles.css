@@ -337,6 +337,257 @@ footer {
   margin-top: 0;
 }
 
+/* Scroll Up Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(226, 61, 61, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 999;
+  font-size: 1.6rem;
+}
+
+.scroll-to-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.3;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(226, 61, 61, 0.4);
+}
+
+.scroll-to-top:hover::before {
+  transform: scale(1.35);
+  opacity: 0;
+}
+
+.scroll-to-top i {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover i {
+  transform: translateY(-3px);
+}
+
+/* Additional animations for the scroll button */
+.scroll-to-top.clicked {
+  animation: clickEffect 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-to-top.pulse {
+  animation: pulsate 1.5s infinite;
+}
+
+@keyframes clickEffect {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.8); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulsate {
+  0% { transform: scale(1); box-shadow: 0 4px 10px rgba(226, 61, 61, 0.25); }
+  50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(226, 61, 61, 0.4); }
+  100% { transform: scale(1); box-shadow: 0 4px 10px rgba(226, 61, 61, 0.25); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Custom scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) #f5f5f5;
+}
+
+/* Improved Menu Styles */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Full menu page specific styles */
+.full-menu {
+  margin-bottom: 4rem;
+}
+
+.menu-tile {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.menu-tile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.menu-tile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.menu-tile:hover::before {
+  opacity: 1;
+}
+
+.menu-tile img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.4s ease;
+}
+
+.menu-tile:hover img {
+  transform: scale(1.05);
+}
+
+.menu-content {
+  padding: 1.6rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--white);
+  position: relative;
+  z-index: 2;
+}
+
+.menu-title {
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.menu-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.menu-tile:hover .menu-title::after {
+  width: 50px;
+}
+
+.menu-price {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.menu-note {
+  font-size: 1.3rem;
+  color: var(--text-light);
+}
+
+.explore-more-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.btn-secondary {
+  background-color: #333;
+  padding: 1.2rem 3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: #555;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hamburger {

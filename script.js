@@ -62,7 +62,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     });
+    
+  // Handle scroll to top button visibility with improved threshold and animations
+    const scrollToTopButton = document.querySelector('.scroll-to-top');
+    if (scrollToTopButton) {
+      // Show button after 300px of scrolling
+      if (scrollPosition > 300) {
+        scrollToTopButton.classList.add('show');
+      } else {
+        scrollToTopButton.classList.remove('show');
+      }
+      
+      // Add pulse effect when reaching bottom of page
+      const scrollHeight = document.documentElement.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight;
+      
+      if (scrollPosition + clientHeight >= scrollHeight - 100) {
+        scrollToTopButton.classList.add('pulse');
+      } else {
+        scrollToTopButton.classList.remove('pulse');
+      }
+    }
   });
+  
+  // Enhanced scroll to top button functionality
+  const scrollToTopButton = document.querySelector('.scroll-to-top');
+  if (scrollToTopButton) {
+    scrollToTopButton.addEventListener('click', () => {
+      // Add a nice animation class when clicked
+      scrollToTopButton.classList.add('clicked');
+      
+      // Scroll to top with smooth behavior
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      
+      // Remove animation class after animation completes
+      setTimeout(() => {
+        scrollToTopButton.classList.remove('clicked');
+      }, 700);
+    });
+  }
   
   // Add animation on scroll
   const fadeElements = document.querySelectorAll('.sec-content-div, .tile, .eye-grabber, .eye-grabber-img');
@@ -87,12 +128,45 @@ document.addEventListener('DOMContentLoaded', function() {
     element.style.transform = "translateY(20px)";
     fadeInObserver.observe(element);
   });
-  
-  // Add the CSS class when elements come into view
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.fade-in').forEach(el => {
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
+    // Enhanced animation for menu tiles with data-aos attributes
+  const animateMenuTiles = () => {
+    document.querySelectorAll('.menu-tile[data-aos]').forEach((tile, index) => {
+      // Staggered reveal animation with increasing delays for each item
+      setTimeout(() => {
+        tile.style.opacity = "1";
+        tile.style.transform = "translateY(0)";
+      }, 100 + (index * 80)); // Staggered animation with shorter intervals
     });
-  });
+  };
+  
+  // Initialize menu tile animations with improved transitions
+  if (document.querySelectorAll('.menu-tile[data-aos]').length > 0) {
+    document.querySelectorAll('.menu-tile[data-aos]').forEach((tile, index) => {
+      tile.style.opacity = "0";
+      tile.style.transform = "translateY(30px)";
+      tile.style.transition = "opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+      
+      // Add varying delays based on position in grid
+      const delay = parseInt(tile.getAttribute('data-aos-delay') || '0');
+      tile.style.transitionDelay = (delay / 1000) + "s";
+    });
+    
+    // Enhanced animation trigger with IntersectionObserver for better performance
+    const menuObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        // Start animation after the menu section is visible
+        setTimeout(animateMenuTiles, 200);
+        menuObserver.disconnect(); // Only run once
+      }
+    }, { threshold: 0.1 });
+    
+    // Observe the menu section
+    const menuSection = document.querySelector('#menu') || document.querySelector('#menu-page');
+    if (menuSection) {
+      menuObserver.observe(menuSection);
+    } else {
+      // Fallback if menu section not found
+      setTimeout(animateMenuTiles, 300);
+    }
+  }
 });
