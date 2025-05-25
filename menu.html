@@ -464,5 +464,16 @@
   </div>
   
   <script src="script.js"></script>
+  <script>
+    // Immediate execution to fix menu tiles on mobile
+    (function() {
+      if (window.innerWidth <= 768) {
+        // Force show menu items immediately on mobile
+        document.querySelectorAll('.menu-tile[data-aos]').forEach(function(tile) {
+          tile.setAttribute('style', 'opacity: 1 !important; transform: translateY(0) !important; transition: none !important');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

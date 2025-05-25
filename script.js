@@ -169,4 +169,16 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(animateMenuTiles, 300);
     }
   }
+  
+  // Check if user is on mobile
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    // Force display menu items immediately on mobile devices
+    document.querySelectorAll('.menu-tile[data-aos]').forEach(function(tile) {
+      tile.style.opacity = "1";
+      tile.style.transform = "translateY(0)";
+      tile.style.transition = "none";
+    });
+  }
 });

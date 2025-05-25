@@ -628,6 +628,46 @@ footer {
   .sec-padding {
     padding: 6rem 2rem;
   }
+
+  /* Mobile-specific styles for menu items */
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .menu-tile {
+    margin-bottom: 0.5rem;
+  }
+  
+  .menu-tile img {
+    height: 140px;
+  }
+  
+  .menu-content {
+    padding: 0.8rem;
+  }
+  
+  .menu-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .menu-price {
+    font-size: 1.2rem;
+  }
+  
+  .menu-note {
+    font-size: 1rem;
+    display: none; /* Hide notes on mobile for compact view */
+  }
+  
+  .sec-padding {
+    padding: 4rem 1rem;
+  }
+  
+  .section-heading {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -650,5 +690,14 @@ footer {
   .tile {
     width: 100%;
     max-width: 300px;
+  }
+
+  /* Mobile-specific styles for menu items */
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-tile img {
+    height: 130px;
   }
 }
