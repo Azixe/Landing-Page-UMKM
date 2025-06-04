@@ -25,20 +25,58 @@
         <a href="#contact" class="nav-link">KONTAK</a>
       </nav>
     </div>
-  </header>
-  <main>
-    <section id="home" class="flexible home-sec">
-      <div class="eye-grabber-img">
-        <img src="hero-snack.jpg" alt="Produk Snack Intan" />
+  </header>  <main>
+    <section id="home" class="hero-section">
+      <div class="hero-background">
+        <img src="imgs/assets/Hero.jpg" alt="Intan Snack Purbalingga Storefront" />
+        <div class="hero-overlay"></div>
       </div>
-      <div class="eye-grabber">
-        <h1>Snack Lezat & Terjangkau</h1>
-        <h2>
-          Intan Snack Purbalingga – Aneka kue dan snack tradisional-modern untuk segala acara.
-        </h2>
-        <button class="btn" onclick="window.location.href = '#contact';">
-          <i class="fas fa-shopping-cart"></i> Pesan Sekarang!
-        </button>
+      
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>Sejak 2016</span>
+        </div>
+        
+        <div class="hero-text">
+          <h1>Intan Snack Purbalingga</h1>
+          <p class="hero-tagline">Toko Snack Terpercaya di Purbalingga</p>
+          <p class="hero-description">
+            Menyediakan aneka kue dan snack tradisional-modern berkualitas tinggi 
+            untuk segala acara dan kebutuhan Anda
+          </p>
+        </div>
+          <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-count="9">9+</span>
+            <span class="stat-label">Tahun Berpengalaman</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="50">50+</span>
+            <span class="stat-label">Varian Menu</span>
+          </div>          <div class="stat-item">
+            <span class="stat-number" data-count="10000">10000+</span>
+            <span class="stat-label">Pelanggan Puas</span>
+          </div>
+        </div>
+        
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="window.location.href = '#contact';">
+            <i class="fas fa-shopping-cart"></i> Pesan Sekarang
+          </button>
+          <button class="btn-outline" onclick="window.location.href = '#menu';">
+            <i class="fas fa-utensils"></i> Lihat Menu
+          </button>
+        </div>
+        
+       
+      </div>
+      
+      <div class="floating-elements">
+        <div class="floating-element" style="--top: 15%; --left: 10%;">🥧</div>
+        <div class="floating-element" style="--top: 25%; --right: 15%;">🍰</div>
+        <div class="floating-element" style="--bottom: 30%; --left: 8%;">🧁</div>
+        <div class="floating-element" style="--top: 45%; --right: 8%;">🍪</div>
+        <div class="floating-element" style="--bottom: 15%; --right: 25%;">🥟</div>
       </div>
     </section>
 
@@ -46,7 +84,7 @@
       <h3 class="section-heading">TENTANG KAMI</h3>
       <div class="sec-content-div flexible">
         <p>
-          Intan Snack Purbalingga merupakan UMKM kuliner yang menyediakan aneka snack mulai dari kue basah, kering, hingga paket snack box untuk berbagai acara seperti rapat, hajatan, dan event lainnya. Usaha ini mendukung pelaku UMKM lokal dengan sistem titip jual dan telah melayani banyak pelanggan di wilayah Purbalingga dan sekitarnya.
+          <strong>Intan Snack Purbalingga</strong> menghadirkan beragam pilihan snack lezat mulai dari kue basah, kue kering, hingga paket snack box praktis untuk berbagai kebutuhan acara seperti rapat, hajatan, maupun event lainnya. Selain memproduksi sendiri, usaha ini juga menjadi wadah kolaboratif bagi pelaku UMKM lokal melalui sistem titip jual. Dengan jaringan pelanggan yang luas di wilayah Purbalingga dan sekitarnya, Intan Snack terus konsisten menyajikan kualitas dan kepercayaan dalam setiap pesanan.
         </p>
         <img src="about-snack.jpg" alt="Proses produksi snack" />
       </div>
@@ -225,32 +263,245 @@
   <div class="scroll-to-top">
     <i class="fas fa-chevron-up"></i>
   </div>
-  
-  <script>
-    // Mobile navigation toggle
+    <script>
+    // Enhanced mobile navigation toggle with smooth animations
     document.getElementById('hamburger').addEventListener('click', function() {
-      document.getElementById('nav-bar').classList.toggle('active');
-      
-      // Change icon based on menu state
+      const navBar = document.getElementById('nav-bar');
       const icon = this.querySelector('i');
+      
+      navBar.classList.toggle('active');
+      
+      // Enhanced icon animation
       if (icon.classList.contains('fa-bars')) {
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-times');
+        this.style.transform = 'rotate(90deg)';
       } else {
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
+        this.style.transform = 'rotate(0deg)';
       }
     });
     
-    // Close mobile menu when clicking a link
+    // Close mobile menu when clicking a link with smooth scroll
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        
+        // Close mobile menu
         document.getElementById('nav-bar').classList.remove('active');
-        const icon = document.querySelector('.hamburger i');
+        const hamburger = document.querySelector('.hamburger');
+        const icon = hamburger.querySelector('i');
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
+        hamburger.style.transform = 'rotate(0deg)';
+        
+        // Smooth scroll to target
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       });
     });
+
+    // Enhanced scroll to top button with improved functionality
+    const scrollToTopButton = document.querySelector('.scroll-to-top');
+    
+    // Show/hide scroll button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollToTopButton.classList.add('show');
+      } else {
+        scrollToTopButton.classList.remove('show');
+      }
+      
+      // Add scroll effect to header
+      const header = document.getElementById('header');
+      if (window.pageYOffset > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll to top with click animation
+    scrollToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToTopButton.classList.add('clicked');
+      
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      
+      // Remove click animation after animation completes
+      setTimeout(() => {
+        scrollToTopButton.classList.remove('clicked');
+      }, 700);
+    });
+
+    // Enhanced button click effects
+    document.querySelectorAll('.btn-primary, .btn-secondary, .btn-outline').forEach(button => {
+      button.addEventListener('click', function(e) {
+        // Create ripple effect
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Animate statistics counters when they come into view
+    const animateCounters = () => {
+      const counters = document.querySelectorAll('.stat-number');
+      
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const current = parseInt(counter.textContent);
+        
+        if (current < target) {
+          const increment = target / 100;
+          const newValue = Math.min(current + increment, target);
+          counter.textContent = Math.floor(newValue) + '+';
+          
+          if (newValue < target) {
+            setTimeout(animateCounters, 20);
+          } else {
+            counter.classList.add('completed');
+          }
+        }
+      });
+    };
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('hero-stats')) {
+            // Start counter animation
+            setTimeout(animateCounters, 500);
+          }
+          
+          // Add fade-in animation to menu tiles
+          if (entry.target.classList.contains('menu-tile')) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+          
+          // Add slide-in animation to contact cards
+          if (entry.target.classList.contains('contact-card')) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateX(0)';
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animations
+    document.addEventListener('DOMContentLoaded', () => {
+      // Observe statistics
+      const heroStats = document.querySelector('.hero-stats');
+      if (heroStats) observer.observe(heroStats);
+      
+      // Observe menu tiles
+      document.querySelectorAll('.menu-tile').forEach((tile, index) => {
+        tile.style.opacity = '0';
+        tile.style.transform = 'translateY(30px)';
+        tile.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(tile);
+      });
+      
+      // Observe contact cards
+      document.querySelectorAll('.contact-card').forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = index % 2 === 0 ? 'translateX(-30px)' : 'translateX(30px)';
+        card.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+        observer.observe(card);
+      });
+    });
+
+    // Add keyboard navigation support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        // Close mobile menu on Escape
+        document.getElementById('nav-bar').classList.remove('active');
+        const hamburger = document.querySelector('.hamburger');
+        const icon = hamburger.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        hamburger.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // Preload images for better performance
+    const preloadImages = () => {
+      const images = [
+        'imgs/Bika ambon.jpg',
+        'imgs/Dadar Gulung.jpg',
+        'imgs/Klepon.jpg',
+        'imgs/Martabak.jpg',
+        'imgs/Kue pukis.jpg',
+        'imgs/Risol Sayur.jpg',
+        'imgs/Onde@.jpg',
+        'imgs/Lemper Bakar.jpg',
+        'imgs/Piscok.jpg'
+      ];
+      
+      images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    // Initialize preloading after page load
+    window.addEventListener('load', preloadImages);
   </script>
+
+  <!-- Add CSS for ripple effect -->
+  <style>
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0);
+      animation: rippleEffect 0.6s linear;
+      pointer-events: none;
+    }
+
+    @keyframes rippleEffect {
+      to {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
 </body>
 </html>

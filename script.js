@@ -167,8 +167,61 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       // Fallback if menu section not found
       setTimeout(animateMenuTiles, 300);
-    }
+    }  }
+    // Hero Stats Counter Animation
+  function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    const options = {
+      threshold: 0.3,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = parseInt(counter.getAttribute('data-count'));
+          const duration = 2500; // 2.5 seconds for smoother effect
+          const startTime = performance.now();
+          
+          // Determine if we should add a "+" suffix
+          const shouldAddPlus = target >= 50;
+          
+          const updateCounter = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Use easing function for smoother animation
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const current = Math.floor(easeOutQuart * target);
+            
+            if (progress < 1) {
+              counter.textContent = current;
+              requestAnimationFrame(updateCounter);
+            } else {
+              // Final value with + suffix if needed
+              counter.textContent = target + (shouldAddPlus ? '+' : '');
+              
+              // Add a pulse effect when animation completes
+              counter.style.transform = 'scale(1.15)';
+              setTimeout(() => {
+                counter.style.transform = 'scale(1)';
+              }, 300);
+            }
+          };
+          
+          // Start the animation
+          requestAnimationFrame(updateCounter);
+          observer.unobserve(counter);
+        }
+      });
+    }, options);
+    
+    counters.forEach(counter => observer.observe(counter));
   }
+  
+  // Initialize counter animation
+  animateCounters();
   
   // Check if user is on mobile
   const isMobile = window.innerWidth <= 768;
