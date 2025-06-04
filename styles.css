@@ -236,10 +236,8 @@ html {
   color: #2c2c2c;
   text-shadow: 
     0 1px 0 rgba(255, 255, 255, 0.8),
-    0 -1px 0 rgba(0, 0, 0, 0.3);
-  position: relative;
+    0 -1px 0 rgba(0, 0, 0, 0.3);  position: relative;
   overflow: hidden;
-  animation: platinumShine 4s ease-in-out infinite;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -282,7 +280,6 @@ html {
     inset 0 1px 0 rgba(255, 255, 255, 1),
     inset 0 -1px 0 rgba(0, 0, 0, 0.15),
     0 0 50px rgba(255, 255, 255, 0.8);
-  animation-duration: 2s;
 }
 
 .hero-text h1 {

@@ -365,42 +365,50 @@
           ripple.remove();
         }, 600);
       });
-    });
-
-    // Animate statistics counters when they come into view
+    });    // Elegant counter animation that starts from 0
     const animateCounters = () => {
       const counters = document.querySelectorAll('.stat-number');
       
       counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-count'));
-        const current = parseInt(counter.textContent);
+        const duration = 2000; // 2 seconds animation
+        const startTime = performance.now();
         
-        if (current < target) {
-          const increment = target / 100;
-          const newValue = Math.min(current + increment, target);
-          counter.textContent = Math.floor(newValue) + '+';
+        const updateCounter = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
           
-          if (newValue < target) {
-            setTimeout(animateCounters, 20);
+          // Smooth easing function
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+          const currentValue = Math.floor(target * easeOutQuart);
+          
+          counter.textContent = currentValue.toLocaleString() + '+';
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
           } else {
             counter.classList.add('completed');
           }
-        }
+        };
+        
+        // Start from 0
+        counter.textContent = '0+';
+        requestAnimationFrame(updateCounter);
       });
-    };
-
-    // Intersection Observer for scroll animations
+    };    // Intersection Observer for scroll animations
     const observerOptions = {
-      threshold: 0.1,
+      threshold: 0.3,
       rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          if (entry.target.classList.contains('hero-stats')) {
-            // Start counter animation
-            setTimeout(animateCounters, 500);
+          if (entry.target.classList.contains('hero-stats') && !entry.target.dataset.animated) {
+            // Mark as animated to prevent re-triggering
+            entry.target.dataset.animated = 'true';
+            // Start counter animation with slight delay
+            setTimeout(animateCounters, 200);
           }
           
           // Add fade-in animation to menu tiles
@@ -477,8 +485,7 @@
     // Initialize preloading after page load
     window.addEventListener('load', preloadImages);
   </script>
-
-  <!-- Add CSS for ripple effect -->
+  <!-- Add CSS for ripple effect and counter animations -->
   <style>
     .ripple {
       position: absolute;
@@ -501,6 +508,24 @@
     .btn-outline {
       position: relative;
       overflow: hidden;
+    }
+    
+    /* Elegant counter styling */
+    .stat-number {
+      font-weight: bold;
+      color: #e23d3d;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .stat-number.completed {
+      animation: counterComplete 0.4s ease-out;
+    }
+    
+    @keyframes counterComplete {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
   </style>
 </body>
