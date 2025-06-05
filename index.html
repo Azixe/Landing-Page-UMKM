@@ -399,23 +399,15 @@
         cancelAnimationFrame(scrollTimeout);
       }
       scrollTimeout = requestAnimationFrame(handleScroll);
-    }, { passive: true });
-
-    // Smooth scroll to top with click animation
-    scrollToTopButton.addEventListener('click', (e) => {
-      e.preventDefault();
+    }, { passive: true });    // Smooth scroll to top with click animation
+    scrollToTopButton.addEventListener('click', () => {
       scrollToTopButton.classList.add('clicked');
       
-      // Smooth scroll with easing
-      const scrollToTop = () => {
-        const scrollY = window.pageYOffset;
-        if (scrollY > 0) {
-          window.scrollTo(0, scrollY - scrollY / 8);
-          requestAnimationFrame(scrollToTop);
-        }
-      };
-      
-      requestAnimationFrame(scrollToTop);
+      // Use native smooth scroll behavior for consistent speed
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
       
       // Remove click animation after animation completes
       setTimeout(() => {
