@@ -2,11 +2,31 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#e23d3d" />
+  <meta name="color-scheme" content="light" />
   <title>Intan Snack Purbalingga</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <meta name="description" content="Intan Snack Purbalingga - UMKM kuliner penyedia aneka snack untuk berbagai acara di Purbalingga dan sekitarnya." />
+  <meta name="keywords" content="intan snack, purbalingga, umkm, kue, snack, catering, jawa tengah" />
+  <meta name="author" content="Intan Snack Purbalingga" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Intan Snack Purbalingga - Toko Snack Terpercaya" />
+  <meta property="og:description" content="Menyediakan aneka kue dan snack tradisional-modern berkualitas tinggi untuk segala acara dan kebutuhan Anda" />
+  <meta property="og:image" content="imgs/assets/Hero.jpg" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Intan Snack Purbalingga - Toko Snack Terpercaya" />
+  <meta property="twitter:description" content="Menyediakan aneka kue dan snack tradisional-modern berkualitas tinggi untuk segala acara dan kebutuhan Anda" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="imgs/assets/Hero.jpg" as="image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <body>
   <header id="header">
@@ -24,8 +44,7 @@
         <!-- <a href="#gallery" class="nav-link">GALERI</a> -->
         <a href="#contact" class="nav-link">KONTAK</a>
       </nav>
-    </div>
-  </header>  <main>
+    </div>  </header>  <main>
     <section id="home" class="hero-section">
       <div class="hero-background">
         <img src="imgs/assets/Hero.jpg" alt="Intan Snack Purbalingga Storefront" />
@@ -263,23 +282,26 @@
   <div class="scroll-to-top">
     <i class="fas fa-chevron-up"></i>
   </div>
-    <script>
-    // Enhanced mobile navigation toggle with smooth animations
+    <script>    // Enhanced mobile navigation toggle with smooth animations
     document.getElementById('hamburger').addEventListener('click', function() {
       const navBar = document.getElementById('nav-bar');
       const icon = this.querySelector('i');
+      const body = document.body;
       
       navBar.classList.toggle('active');
+      this.classList.toggle('active');
       
       // Enhanced icon animation
       if (icon.classList.contains('fa-bars')) {
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-times');
         this.style.transform = 'rotate(90deg)';
+        body.style.overflow = 'hidden'; // Prevent background scrolling
       } else {
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
         this.style.transform = 'rotate(0deg)';
+        body.style.overflow = ''; // Restore scrolling
       }
     });
     
@@ -290,52 +312,110 @@
         const target = document.querySelector(link.getAttribute('href'));
         
         // Close mobile menu
-        document.getElementById('nav-bar').classList.remove('active');
+        const navBar = document.getElementById('nav-bar');
         const hamburger = document.querySelector('.hamburger');
         const icon = hamburger.querySelector('i');
+        
+        navBar.classList.remove('active');
+        hamburger.classList.remove('active');
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
         hamburger.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = ''; // Restore scrolling
         
-        // Smooth scroll to target
+        // Smooth scroll to target with proper offset
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          const headerHeight = document.getElementById('header').offsetHeight;
+          const targetPosition = target.offsetTop - headerHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
           });
         }
       });
     });
 
-    // Enhanced scroll to top button with improved functionality
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const navBar = document.getElementById('nav-bar');
+      const hamburger = document.getElementById('hamburger');
+      
+      if (navBar.classList.contains('active') && 
+          !navBar.contains(e.target) && 
+          !hamburger.contains(e.target)) {
+        
+        const icon = hamburger.querySelector('i');
+        navBar.classList.remove('active');
+        hamburger.classList.remove('active');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        hamburger.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        const navBar = document.getElementById('nav-bar');
+        const hamburger = document.querySelector('.hamburger');
+        const icon = hamburger.querySelector('i');
+        
+        navBar.classList.remove('active');
+        hamburger.classList.remove('active');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        hamburger.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
+      }
+    });    // Enhanced scroll to top button with improved functionality
     const scrollToTopButton = document.querySelector('.scroll-to-top');
+    let scrollTimeout;
     
-    // Show/hide scroll button based on scroll position
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
+    // Throttled scroll handler for better performance
+    const handleScroll = () => {
+      const scrollY = window.pageYOffset;
+      const header = document.getElementById('header');
+      
+      // Show/hide scroll button
+      if (scrollY > 500) {
         scrollToTopButton.classList.add('show');
       } else {
         scrollToTopButton.classList.remove('show');
       }
       
       // Add scroll effect to header
-      const header = document.getElementById('header');
-      if (window.pageYOffset > 50) {
+      if (scrollY > 50) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-    });
+    };
+
+    // Throttle scroll events for better performance
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) {
+        cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = requestAnimationFrame(handleScroll);
+    }, { passive: true });
 
     // Smooth scroll to top with click animation
     scrollToTopButton.addEventListener('click', (e) => {
       e.preventDefault();
       scrollToTopButton.classList.add('clicked');
       
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      // Smooth scroll with easing
+      const scrollToTop = () => {
+        const scrollY = window.pageYOffset;
+        if (scrollY > 0) {
+          window.scrollTo(0, scrollY - scrollY / 8);
+          requestAnimationFrame(scrollToTop);
+        }
+      };
+      
+      requestAnimationFrame(scrollToTop);
       
       // Remove click animation after animation completes
       setTimeout(() => {
@@ -447,27 +527,61 @@
         card.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
         observer.observe(card);
       });
-    });
-
-    // Add keyboard navigation support
+    });    // Add keyboard navigation support
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
+      const navBar = document.getElementById('nav-bar');
+      const hamburger = document.querySelector('.hamburger');
+      
+      if (e.key === 'Escape' && navBar.classList.contains('active')) {
         // Close mobile menu on Escape
-        document.getElementById('nav-bar').classList.remove('active');
-        const hamburger = document.querySelector('.hamburger');
         const icon = hamburger.querySelector('i');
+        navBar.classList.remove('active');
+        hamburger.classList.remove('active');
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
         hamburger.style.transform = 'rotate(0deg)';
+        document.body.style.overflow = '';
       }
     });
 
-    // Preload images for better performance
-    const preloadImages = () => {
-      const images = [
+    // Improved image loading with lazy loading simulation
+    const observeImages = () => {
+      const images = document.querySelectorAll('img[data-src]');
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
+        });
+      }, { rootMargin: '50px' });
+
+      images.forEach(img => imageObserver.observe(img));
+    };
+
+    // Preload critical images for better performance
+    const preloadCriticalImages = () => {
+      const criticalImages = [
+        'imgs/assets/Hero.jpg',
         'imgs/Bika ambon.jpg',
         'imgs/Dadar Gulung.jpg',
-        'imgs/Klepon.jpg',
+        'imgs/Klepon.jpg'
+      ];
+      
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+    };
+
+    // Preload other menu images progressively
+    const preloadMenuImages = () => {
+      const menuImages = [
         'imgs/Martabak.jpg',
         'imgs/Kue pukis.jpg',
         'imgs/Risol Sayur.jpg',
@@ -476,14 +590,57 @@
         'imgs/Piscok.jpg'
       ];
       
-      images.forEach(src => {
-        const img = new Image();
-        img.src = src;
+      let loadIndex = 0;
+      const loadNextImage = () => {
+        if (loadIndex < menuImages.length) {
+          const img = new Image();
+          img.onload = () => {
+            loadIndex++;
+            // Load next image after a small delay to avoid blocking
+            setTimeout(loadNextImage, 100);
+          };
+          img.src = menuImages[loadIndex];
+        }
+      };
+      
+      // Start loading after initial page load
+      setTimeout(loadNextImage, 1000);
+    };
+
+    // Performance monitoring and optimization
+    const optimizePerformance = () => {
+      // Reduce motion for users who prefer it
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.style.setProperty('--transition', 'none');
+        document.documentElement.style.setProperty('--transition-bounce', 'none');
+      }
+
+      // Optimize scrolling performance
+      document.documentElement.style.scrollBehavior = 'smooth';
+      
+      // Add will-change properties dynamically for better performance
+      const animatedElements = document.querySelectorAll('.menu-tile, .contact-card, .btn-primary, .btn-secondary');
+      animatedElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          el.style.willChange = 'transform';
+        });
+        el.addEventListener('mouseleave', () => {
+          el.style.willChange = 'auto';
+        });
       });
     };
 
-    // Initialize preloading after page load
-    window.addEventListener('load', preloadImages);
+    // Initialize optimizations
+    document.addEventListener('DOMContentLoaded', () => {
+      observeImages();
+      preloadCriticalImages();
+      optimizePerformance();
+    });
+
+    // Initialize progressive loading after page load
+    window.addEventListener('load', () => {
+      preloadMenuImages();
+    });
   </script>
   <!-- Add CSS for ripple effect and counter animations -->
   <style>
