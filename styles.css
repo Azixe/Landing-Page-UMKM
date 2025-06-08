@@ -153,8 +153,7 @@ html {
 }
 
 .hamburger:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
+  outline: none;
 }
 
 /* Mobile Navigation Styles */
@@ -2150,12 +2149,11 @@ footer p {
   color: var(--primary-dark);
 }
 
-/* Focus styles for accessibility */
+/* Focus styles for accessibility - removed outlines for navbar elements */
 button:focus,
 a:focus,
 input:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
+  outline: none;
 }
 
 /* Smooth animations for page elements */
