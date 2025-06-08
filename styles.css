@@ -1272,49 +1272,13 @@ html {
 /* Menu Grid Responsive */
 @media (max-width: 768px) {
   .menu-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
     padding: 0 1rem;
   }
   
   .menu-grid.full-menu {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.2rem;
-  }
-  
-  .menu-tile img {
-    height: 150px;
-  }
-  
-  .menu-content {
-    padding: 1.2rem;
-    min-height: 100px;
-  }
-  
-  .menu-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .menu-price {
-    font-size: 1.3rem;
-    margin-bottom: 0.4rem;
-  }
-  
-  .menu-note {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 430px) {
-  .menu-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    padding: 0 0.8rem;
-  }
-  
-  .menu-grid.full-menu {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.8rem;
   }
   
@@ -1323,18 +1287,18 @@ html {
   }
   
   .menu-content {
-    padding: 0.8rem;
+    padding: 1rem;
     min-height: 80px;
   }
   
   .menu-title {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
   
   .menu-price {
     font-size: 1.1rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
   }
   
   .menu-note {
@@ -1342,15 +1306,15 @@ html {
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 430px) {
   .menu-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    padding: 0 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 0.8rem;
+    padding: 0 0.8rem;
   }
   
   .menu-grid.full-menu {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 0.6rem;
   }
   
@@ -1359,22 +1323,58 @@ html {
   }
   
   .menu-content {
-    padding: 0.6rem;
+    padding: 0.8rem;
     min-height: 70px;
   }
   
   .menu-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 0.4rem;
   }
   
   .menu-price {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .menu-note {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    padding: 0 0.5rem;
+    gap: 0.6rem;
+  }
+  
+  .menu-grid.full-menu {
+    grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .menu-tile img {
+    height: 85px;
+  }
+  
+  .menu-content {
+    padding: 0.6rem;
+    min-height: 60px;
+  }
+  
+  .menu-title {
     font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .menu-price {
+    font-size: 0.85rem;
     margin-bottom: 0.1rem;
   }
   
   .menu-note {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 }
 
