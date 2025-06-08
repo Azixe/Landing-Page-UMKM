@@ -1125,57 +1125,109 @@ html {
 /* Menu Grid Responsive */
 @media (max-width: 768px) {
   .menu-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
     padding: 0 1rem;
   }
   
   .menu-grid.full-menu {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
   }
   
   .menu-tile img {
-    height: 180px;
+    height: 150px;
   }
   
   .menu-content {
-    padding: 1.5rem;
-    min-height: 120px;
+    padding: 1.2rem;
+    min-height: 100px;
   }
   
   .menu-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
   }
   
   .menu-price {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
   }
   
   .menu-note {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
   .menu-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 0 0.8rem;
   }
   
   .menu-grid.full-menu {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.8rem;
   }
   
-  .explore-more-container {
-    margin-top: 3rem;
+  .menu-tile img {
+    height: 120px;
   }
   
-  .btn-secondary {
-    padding: 1.2rem 2.5rem;
-    font-size: 1.4rem;
-    width: 100%;
-    max-width: 280px;
+  .menu-content {
+    padding: 0.8rem;
+    min-height: 80px;
+  }
+  
+  .menu-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .menu-price {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .menu-note {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 0 0.5rem;
+    gap: 0.8rem;
+  }
+  
+  .menu-grid.full-menu {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.6rem;
+  }
+  
+  .menu-tile img {
+    height: 100px;
+  }
+  
+  .menu-content {
+    padding: 0.6rem;
+    min-height: 70px;
+  }
+  
+  .menu-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .menu-price {
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+  }
+  
+  .menu-note {
+    font-size: 0.85rem;
   }
 }
 
@@ -1361,34 +1413,35 @@ html {
     width: auto;
     max-width: 100%;
   }
-
-  /* Contact info cards mobile layout */
+  /* Contact info cards mobile layout - keep side by side like desktop */
   .contact-info {
     margin-top: 2rem !important;
-    flex-direction: column !important;
-    gap: 1.5rem !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    justify-content: center !important;
   }
 
   .contact-card {
-    padding: 1.5rem !important;
-    min-width: 100% !important;
+    padding: 1.2rem !important;
+    min-width: auto !important;
     margin: 0;
+    text-align: center;
   }
-
   .contact-card div {
-    font-size: 2.8rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  .contact-card h4 {
-    font-size: 1.6rem !important;
+    font-size: 2.2rem !important;
     margin-bottom: 0.8rem !important;
   }
 
+  .contact-card h4 {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+
   .contact-card p {
-    font-size: 1.3rem !important;
+    font-size: 1.1rem !important;
     line-height: 1.4;
-    margin: 0.3rem 0;
+    margin: 0.2rem 0;
   }
 }
 
@@ -1429,21 +1482,45 @@ html {
   .map-container iframe {
     height: 250px !important;
   }
-
   .contact-card {
-    padding: 1.2rem !important;
+    padding: 1rem !important;
   }
 
   .contact-card div {
-    font-size: 2.4rem !important;
+    font-size: 2rem !important;
   }
 
   .contact-card h4 {
-    font-size: 1.5rem !important;
+    font-size: 1.3rem !important;
   }
 
   .contact-card p {
+    font-size: 1rem !important;
+  }
+}
+
+/* Extra small devices - single column contact layout if needed */
+@media (max-width: 350px) {
+  .contact-info {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .contact-card {
+    padding: 1rem !important;
+  }
+
+  .contact-card div {
+    font-size: 1.8rem !important;
+  }
+
+  .contact-card h4 {
     font-size: 1.2rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .contact-card p {
+    font-size: 0.95rem !important;
   }
 }
 
@@ -2078,7 +2155,7 @@ img.lazy {
 .menu-tile,
 .contact-card,
 .btn-primary,
-.btn-secondary,
+btn-secondary,
 .btn-outline,
 .scroll-to-top,
 .nav-link {
