@@ -8,6 +8,9 @@
   <title>Intan Snack Purbalingga</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Intan Snack Purbalingga - UMKM kuliner penyedia aneka snack untuk berbagai acara di Purbalingga dan sekitarnya." />
   <meta name="keywords" content="intan snack, purbalingga, umkm, kue, snack, catering, jawa tengah" />
   <meta name="author" content="Intan Snack Purbalingga" />
@@ -29,6 +32,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+  
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">IS</div>
+      <p>Memuat...</p>
+    </div>
+  </div>
+
   <header id="header">
     <div class="header-content-div">
       <a href="#home">
@@ -82,12 +96,14 @@
           </button>
           <button class="btn-outline" onclick="window.location.href = '#menu';">
             <i class="fas fa-utensils"></i> Lihat Menu
-          </button>        </div>
-        
+          </button>        </div>        
        
       </div>
       
-    </section>
+      <!-- Floating Elements -->
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>    </section>
 
     <section id="about" class="sec-padding">
       <h3 class="section-heading">TENTANG KAMI</h3>
@@ -95,10 +111,9 @@
         <p>
           <strong>Intan Snack Purbalingga</strong> menghadirkan beragam pilihan snack lezat mulai dari kue basah, kue kering, hingga paket snack box praktis untuk berbagai kebutuhan acara seperti rapat, hajatan, maupun event lainnya. Selain memproduksi sendiri, usaha ini juga menjadi wadah kolaboratif bagi pelaku UMKM lokal melalui sistem titip jual. Dengan jaringan pelanggan yang luas di wilayah Purbalingga dan sekitarnya, Intan Snack terus konsisten menyajikan kualitas dan kepercayaan dalam setiap pesanan.
         </p>
-        <img src="imgs\assets\carousel\img_tentangkami.png" alt="Proses produksi snack" />
-      </div>
-    </section>    <section id="menu" class="sec-padding">
+        <img src="imgs\assets\carousel\img_tentangkami.png" alt="Proses produksi snack" />      </div>    </section>    <section id="menu" class="sec-padding">
       <h3 class="section-heading">DAFTAR MENU</h3>
+      
       <div class="menu-grid">
         <div class="menu-tile" data-aos="fade-up">
           <img src="imgs/Bika ambon.jpg" alt="Bika ambon" />
@@ -230,7 +245,8 @@
         <div class="whatsapp-cta" style="flex:1; min-width:300px; max-width:600px; text-align:center; background-color:#f8f8f8; padding:30px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
           <div style="font-size:72px; margin-bottom:15px;"><i class="fab fa-whatsapp"></i></div>
           <h4 style="margin-bottom:15px; font-size:24px;">Pesan Melalui WhatsApp</h4>
-          <p style="margin-bottom:25px; font-size:16px;">Cara termudah untuk memesan aneka snack dan kue dari Intan Snack Purbalingga. Kami akan merespon dengan cepat!</p>          <a href="https://wa.link/fcu44c" target="_blank" rel="noopener noreferrer" style="display:inline-block; background-color:#25d366; color:white; text-decoration:none; padding:15px 40px; font-weight:bold; border-radius:30px; font-size:18px;">
+          <p style="margin-bottom:25px; font-size:16px;">Cara termudah untuk memesan aneka snack dan kue dari Intan Snack Purbalingga. Kami akan merespon dengan cepat!</p>
+          <a href="https://wa.link/fcu44c" style="display:inline-block; background-color:#25d366; color:white; text-decoration:none; padding:15px 40px; font-weight:bold; border-radius:30px; font-size:18px;">
             <i class="fab fa-whatsapp"></i> Pesan Sekarang via WhatsApp
           </a>
         </div>
@@ -240,13 +256,13 @@
         <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
           <div style="margin-bottom:10px;"><i class="fas fa-phone"></i></div>
           <h4>Telepon</h4>
-          <p><a href="https://wa.link/fcu44c" target="_blank" rel="noopener noreferrer" style="color:#e23d3d; text-decoration:none;">+62 0857-9940-7027</a></p>
+          <p><a href="https://wa.link/fcu44c" style="color:#e23d3d; text-decoration:none;">+62 0857-9940-7027</a></p>
         </div>
         
         <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
           <div style="margin-bottom:10px;"><i class="fab fa-instagram"></i></div>
           <h4>Instagram</h4>
-          <p><a href="https://www.instagram.com/intansnackpurbalingga/?hl=en" target="_blank" rel="noopener noreferrer" style="color:#e23d3d; text-decoration:none;">@intansnackpurbalingga</a></p>
+          <p><a href="https://www.instagram.com/intansnackpurbalingga/?hl=en" style="color:#e23d3d; text-decoration:none;">@intansnackpurbalingga</a></p>
         </div>
 
         <div class="contact-card" style="text-align:center; padding:20px; min-width:200px;">
@@ -380,6 +396,13 @@
       } else {
         header.classList.remove('scrolled');
       }
+      
+      // Update scroll progress indicator
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = (scrollY / documentHeight) * 100;
+      const scrollProgressBar = document.getElementById('scroll-progress');
+      
+      scrollProgressBar.style.width = scrollProgress + '%';
     };
 
     // Throttle scroll events for better performance
@@ -621,6 +644,14 @@
     // Initialize progressive loading after page load
     window.addEventListener('load', () => {
       preloadMenuImages();
+      const pageLoader = document.getElementById('page-loader');
+      if (pageLoader) {
+        // Fade out and remove page loader
+        pageLoader.style.opacity = '0';
+        setTimeout(() => {
+          pageLoader.remove();
+        }, 600);
+      }
     });
   </script>
   <!-- Add CSS for ripple effect and counter animations -->
@@ -664,6 +695,48 @@
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
+    }
+
+    /* Scroll progress indicator */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: #e23d3d;
+      z-index: 9999;
+      width: 0%;
+      transition: width 0.2s ease;
+    }
+
+    /* Page loader styles */
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader-content {
+      text-align: center;
+    }
+
+    .loader-logo {
+      font-size: 48px;
+      font-weight: 700;
+      color: #e23d3d;
+      margin-bottom: 10px;
+    }
+
+    .page-loader p {
+      font-size: 18px;
+      color: #666;
     }
   </style>
 </body>
