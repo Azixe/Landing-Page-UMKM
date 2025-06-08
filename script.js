@@ -2,29 +2,57 @@ document.addEventListener('DOMContentLoaded', function() {
   // Mobile navigation toggle
   const hamburger = document.getElementById('hamburger');
   const navBar = document.getElementById('nav-bar');
-  
-  hamburger.addEventListener('click', function() {
+    // Function to close mobile menu
+  function closeMobileMenu() {
+    navBar.classList.remove('active');
+    hamburger.classList.remove('active');
+    const icon = hamburger.querySelector('i');
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+    document.body.style.overflow = '';
+  }
+    hamburger.addEventListener('click', function() {
     navBar.classList.toggle('active');
+    this.classList.toggle('active');
     
     // Change icon based on menu state
     const icon = this.querySelector('i');
     if (icon.classList.contains('fa-bars')) {
       icon.classList.remove('fa-bars');
       icon.classList.add('fa-times');
+      document.body.style.overflow = 'hidden';
     } else {
       icon.classList.remove('fa-times');
       icon.classList.add('fa-bars');
+      document.body.style.overflow = '';
     }
   });
   
   // Close mobile menu when clicking a link
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navBar.classList.remove('active');
-      const icon = hamburger.querySelector('i');
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
-    });
+    link.addEventListener('click', closeMobileMenu);
+  });
+  
+  // Close mobile menu when clicking outside (overlay)
+  document.addEventListener('click', function(e) {
+    if (navBar.classList.contains('active') && 
+        !navBar.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+    // Close mobile menu on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navBar.classList.contains('active')) {
+      closeMobileMenu();
+    }
+  });
+  
+  // Handle window resize - close mobile menu if switching to desktop
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768 && navBar.classList.contains('active')) {
+      closeMobileMenu();
+    }
   });
   
   // Smooth scroll for navigation links
