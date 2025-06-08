@@ -1,14 +1,272 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta charset="UTF-8" />  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#e23d3d" />
   <meta name="color-scheme" content="light" />
+  
+  <!-- Performance optimization meta tags -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  
   <title>Intan Snack Purbalingga</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Critical CSS Inlined -->  <style>
+    /* Critical above-the-fold styles - Optimized */
+    :root {
+      --primary: #e23d3d;
+      --primary-gradient: linear-gradient(135deg, #e23d3d 0%, #ff5252 100%);
+      --text-dark: #1a1a1a;
+      --bg-light: #fafafa;
+      --bg-hero: linear-gradient(135deg, #fef7f0 0%, #ffffff 50%, #f0f9ff 100%);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      --border-radius-lg: 20px;
+    }
+    
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    body { 
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      font-size: 1.6rem; 
+      background: var(--bg-light); 
+      color: var(--text-dark); 
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Optimize font loading */
+    .font-loading body {
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    /* Critical header styles */
+    #header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+    }
+    
+    #header.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    
+    .header-content-div {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+    
+    #header-img { 
+      height: 50px; 
+      width: auto;
+      object-fit: contain;
+    }
+    
+    #nav-bar { 
+      display: flex; 
+      gap: 2.5rem; 
+      align-items: center; 
+    }
+    
+    .nav-link { 
+      text-decoration: none; 
+      color: var(--text-dark); 
+      font-weight: 600; 
+      padding: 1rem 1.5rem; 
+      border-radius: 8px; 
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      background: rgba(226, 61, 61, 0.1);
+      color: var(--primary);
+    }
+    
+    /* Critical hero styles */
+    .hero-section {
+      display: flex;
+      align-items: center;
+      background: var(--bg-hero);
+      padding: 4rem 0;
+      min-height: 70vh;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-background {
+      flex: 0 0 45%;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow);
+      margin: 2rem 0 2rem 3rem;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .hero-background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(226, 61, 61, 0.1), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .hero-background img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .hero-content {
+      flex: 1;
+      padding: 4rem 4rem 4rem 3rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero-text h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;    }
+    
+    /* Scroll progress indicator */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: var(--primary-gradient);
+      z-index: 9999;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+      /* Image optimization */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Hamburger styles */
+    .hamburger { 
+      display: none; 
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+    
+    .hamburger:hover {
+      background: rgba(226, 61, 61, 0.1);
+      color: var(--primary);
+    }
+    
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      
+      #nav-bar { 
+        display: none; 
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        transition: top 0.3s ease;
+        z-index: 999;
+        padding: 2rem 0;
+      }
+      
+      #nav-bar.active {
+        display: flex;
+        top: 70px;
+      }
+      
+      .hero-section { 
+        flex-direction: column; 
+        min-height: auto;
+        padding: 2rem 0;
+      }
+      
+      .hero-background { 
+        flex: none; 
+        width: 90%; 
+        margin: 1rem auto 3rem auto; 
+      }
+      
+      .hero-background img { 
+        height: 280px; 
+      }
+      
+      .hero-content { 
+        max-width: 100%; 
+        padding: 3rem 2rem; 
+      }
+      
+      .hero-text h1 { 
+        font-size: 3.2rem; 
+      }
+    }
+    
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .scroll-progress {
+        transition: none;
+      }
+    }
+  </style>
+  
+  <!-- Non-critical CSS loaded asynchronously -->
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+  
+  <!-- Font loading optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+  
+  <!-- Font Awesome loaded asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
   
   <!-- SEO Meta Tags -->
   <meta name="description" content="Intan Snack Purbalingga - UMKM kuliner penyedia aneka snack untuk berbagai acara di Purbalingga dan sekitarnya." />
@@ -24,24 +282,14 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:title" content="Intan Snack Purbalingga - Toko Snack Tradisional" />
-  <meta property="twitter:description" content="Menyediakan aneka kue dan snack tradisional-modern berkualitas tinggi untuk segala acara dan kebutuhan Anda" />
-  
-  <!-- Preload critical resources -->
-  <link rel="preload" href="imgs/assets/Hero.jpg" as="image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta property="twitter:description" content="Menyediakan aneka kue dan snack tradisional-modern berkualitas tinggi untuk segala acara dan kebutuhan Anda" />  <!-- Preload critical resources -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://www.google.com">
+  <link rel="prefetch" href="menu.html">
 </head>
-<body>
-  <!-- Scroll Progress Indicator -->
+<body>  <!-- Scroll Progress Indicator -->
   <div class="scroll-progress" id="scroll-progress"></div>
-  
-  <!-- Page Loader -->
-  <div class="page-loader" id="page-loader">
-    <div class="loader-content">
-      <div class="loader-logo">IS</div>
-      <p>Memuat...</p>
-    </div>
-  </div>
 
   <header id="header">
     <div class="header-content-div">
@@ -60,7 +308,7 @@
       </nav>
     </div>  </header>  <main>
     <section id="home" class="hero-section">      <div class="hero-background">
-        <img src="imgs/assets/Hero.jpg" alt="Intan Snack Purbalingga Storefront" />
+        <img src="imgs/assets/Hero.jpg" alt="Intan Snack Purbalingga Storefront" width="600" height="400" />
       </div>
       
       <div class="hero-content">
@@ -111,10 +359,9 @@
         <p>
           <strong>Intan Snack Purbalingga</strong> menghadirkan beragam pilihan snack lezat mulai dari kue basah, kue kering, hingga paket snack box praktis untuk berbagai kebutuhan acara seperti rapat, hajatan, maupun event lainnya. Selain memproduksi sendiri, usaha ini juga menjadi wadah kolaboratif bagi pelaku UMKM lokal melalui sistem titip jual. Dengan jaringan pelanggan yang luas di wilayah Purbalingga dan sekitarnya, Intan Snack terus konsisten menyajikan kualitas dan kepercayaan dalam setiap pesanan.
         </p>
-        <img src="imgs\assets\carousel\img_tentangkami.png" alt="Proses produksi snack" />      </div>    </section>    <section id="menu" class="sec-padding">
+        <img src="imgs\assets\carousel\img_tentangkami.png" alt="Proses produksi snack" width="500" height="350" />      </div>    </section>    <section id="menu" class="sec-padding">
       <h3 class="section-heading">DAFTAR MENU</h3>
-      
-      <div class="menu-grid">
+        <div class="menu-grid">
         <div class="menu-tile" data-aos="fade-up">
           <img src="imgs/Bika ambon.jpg" alt="Bika ambon" />
           <div class="menu-content">
@@ -546,112 +793,106 @@
         hamburger.style.transform = 'rotate(0deg)';
         document.body.style.overflow = '';
       }
-    });
-
-    // Improved image loading with lazy loading simulation
-    const observeImages = () => {
-      const images = document.querySelectorAll('img[data-src]');
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
-            imageObserver.unobserve(img);
-          }
+    });    // GitHub Pages Compatible Performance Optimizations
+    
+    // Font loading optimization
+    const optimizeFonts = () => {
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+          document.body.classList.remove('font-loading');
         });
-      }, { rootMargin: '50px' });
-
-      images.forEach(img => imageObserver.observe(img));
+      } else {
+        // Fallback for older browsers
+        setTimeout(() => {
+          document.body.classList.remove('font-loading');
+        }, 3000);
+      }
     };
 
-    // Preload critical images for better performance
-    const preloadCriticalImages = () => {
-      const criticalImages = [
-        'imgs/assets/Hero.jpg',
-        'imgs/Bika ambon.jpg',
-        'imgs/Dadar Gulung.jpg',
-        'imgs/Klepon.jpg'
-      ];
-      
-      criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-      });
+    // Preload resources on hover for better UX
+    const preloadResources = () => {
+      const menuLink = document.querySelector('a[href="menu.html"]');
+      if (menuLink) {
+        menuLink.addEventListener('mouseenter', () => {
+          if (!document.querySelector('link[href="menu.html"]')) {
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = 'menu.html';
+            document.head.appendChild(link);
+          }
+        }, { once: true });
+      }
     };
 
-    // Preload other menu images progressively
-    const preloadMenuImages = () => {
-      const menuImages = [
-        'imgs/Martabak.jpg',
-        'imgs/Kue pukis.jpg',
-        'imgs/Risol Sayur.jpg',
-        'imgs/Onde@.jpg',
-        'imgs/Lemper Bakar.jpg',
-        'imgs/Piscok.jpg'
-      ];
+    // Optimized scroll performance
+    const initScrollOptimizations = () => {
+      let ticking = false;
       
-      let loadIndex = 0;
-      const loadNextImage = () => {
-        if (loadIndex < menuImages.length) {
-          const img = new Image();
-          img.onload = () => {
-            loadIndex++;
-            // Load next image after a small delay to avoid blocking
-            setTimeout(loadNextImage, 100);
-          };
-          img.src = menuImages[loadIndex];
+      const updateScrollElements = () => {
+        const scrollY = window.pageYOffset;
+        const header = document.getElementById('header');
+        const scrollProgress = document.getElementById('scroll-progress');
+        const scrollToTopButton = document.querySelector('.scroll-to-top');
+        
+        // Header scroll effect
+        if (scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        // Scroll progress
+        if (scrollProgress) {
+          const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercent = Math.min((scrollY / documentHeight) * 100, 100);
+          scrollProgress.style.width = scrollPercent + '%';
+        }
+        
+        // Scroll to top button
+        if (scrollToTopButton) {
+          if (scrollY > 500) {
+            scrollToTopButton.classList.add('show');
+          } else {
+            scrollToTopButton.classList.remove('show');
+          }
+        }
+        
+        ticking = false;
+      };
+      
+      const requestTick = () => {
+        if (!ticking) {
+          requestAnimationFrame(updateScrollElements);
+          ticking = true;
         }
       };
       
-      // Start loading after initial page load
-      setTimeout(loadNextImage, 1000);
+      window.addEventListener('scroll', requestTick, { passive: true });
     };
 
-    // Performance monitoring and optimization
-    const optimizePerformance = () => {
-      // Reduce motion for users who prefer it
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.documentElement.style.setProperty('--transition', 'none');
-        document.documentElement.style.setProperty('--transition-bounce', 'none');
+    // Memory cleanup
+    const cleanup = () => {
+      // Add performance monitoring if supported
+      if ('PerformanceObserver' in window) {
+        try {
+          // Monitor Largest Contentful Paint
+          new PerformanceObserver((entryList) => {
+            const entries = entryList.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            console.log('LCP:', lastEntry.startTime);
+          }).observe({ entryTypes: ['largest-contentful-paint'] });
+        } catch (e) {
+          // Silently fail if not supported
+        }
       }
-
-      // Optimize scrolling performance
-      document.documentElement.style.scrollBehavior = 'smooth';
-      
-      // Add will-change properties dynamically for better performance
-      const animatedElements = document.querySelectorAll('.menu-tile, .contact-card, .btn-primary, .btn-secondary');
-      animatedElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          el.style.willChange = 'transform';
-        });
-        el.addEventListener('mouseleave', () => {
-          el.style.willChange = 'auto';
-        });
-      });
-    };
-
-    // Initialize optimizations
+    };    // Initialize GitHub Pages compatible optimizations
     document.addEventListener('DOMContentLoaded', () => {
-      observeImages();
-      preloadCriticalImages();
-      optimizePerformance();
-    });
-
-    // Initialize progressive loading after page load
-    window.addEventListener('load', () => {
-      preloadMenuImages();
-      const pageLoader = document.getElementById('page-loader');
-      if (pageLoader) {
-        // Fade out and remove page loader
-        pageLoader.style.opacity = '0';
-        setTimeout(() => {
-          pageLoader.remove();
-        }, 600);
-      }
+      document.body.classList.add('font-loading');
+      
+      optimizeFonts();
+      preloadResources();
+      initScrollOptimizations();
+      cleanup();
     });
   </script>
   <!-- Add CSS for ripple effect and counter animations -->
@@ -706,38 +947,7 @@
       background: #e23d3d;
       z-index: 9999;
       width: 0%;
-      transition: width 0.2s ease;
-    }
-
-    /* Page loader styles */
-    .page-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .loader-content {
-      text-align: center;
-    }
-
-    .loader-logo {
-      font-size: 48px;
-      font-weight: 700;
-      color: #e23d3d;
-      margin-bottom: 10px;
-    }
-
-    .page-loader p {
-      font-size: 18px;
-      color: #666;
-    }
+      transition: width 0.2s ease;    }
   </style>
 </body>
 </html>

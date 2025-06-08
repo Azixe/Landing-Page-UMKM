@@ -1,5 +1,5 @@
-/* Font & Reset */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap");
+/* Optimized Font Loading - Remove duplicate imports */
+/* Fonts are now loaded asynchronously in HTML head */
 
 :root {
   font-size: 10px;
