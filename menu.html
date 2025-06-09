@@ -39,9 +39,44 @@
     <section id="menu-page" class="sec-padding">
       <h1 class="section-heading">MENU LENGKAP</h1>
       
+      <!-- Menu Statistics -->
+      <div class="menu-stats">
+        <div class="stat-card">
+          <div class="stat-number">58</div>
+          <div class="stat-label">Varian Menu</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1K-5K</div>
+          <div class="stat-label">Range Harga</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Fresh & Halal</div>
+        </div>
+      </div>
+
+      <!-- Menu Filters -->      <div class="menu-filters">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-category="all">Semua Menu</button>
+          <button class="filter-tab" data-category="tradisional">Kue Tradisional</button>
+          <button class="filter-tab" data-category="gorengan">Gorengan</button>
+          <button class="filter-tab" data-category="minuman">Minuman</button>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Cari menu favorit Anda..." id="menu-search">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+      
       <div class="menu-grid full-menu">
+        <!-- Menu Category: Kue Tradisional -->
+        <div class="menu-category">
+          <h2>🏛️ Kue Tradisional</h2>
+          <p>Koleksi kue-kue tradisional Indonesia dengan cita rasa autentik dan resep turun temurun</p>
+        </div>
+
         <!-- Bika Ambon -->
-        <div class="menu-tile" data-aos="fade-up">
+        <div class="menu-tile" data-aos="fade-up" data-category="tradisional" data-availability="popular">
           <img src="imgs/Bika ambon.jpg" alt="Bika Ambon" />
           <div class="menu-content">
             <h4 class="menu-title">Bika Ambon</h4>
@@ -53,7 +88,7 @@
         </div>
         
         <!-- Bolu Gula Jawa -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="tradisional">
           <img src="imgs/Bolu Gula jawa.jpg" alt="Bolu Gula Jawa" />
           <div class="menu-content">
             <h4 class="menu-title">Bolu Gula Jawa</h4>
@@ -65,7 +100,7 @@
         </div>
 
         <!-- Bolu Kukys -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional">
           <img src="imgs/Bolu Kukys.jpg" alt="Bolu Kukys" />
           <div class="menu-content">
             <h4 class="menu-title">Bolu Kukys</h4>
@@ -77,7 +112,7 @@
         </div>
 
         <!-- Carabikang -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional" data-availability="recommended">
           <img src="imgs/carabikang.jpeg" alt="Carabikang" />
           <div class="menu-content">
             <h4 class="menu-title">Carabikang</h4>
@@ -87,33 +122,9 @@
             </div>
           </div>
         </div>
-
-        <!-- Combro -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
-          <img src="imgs/Combro.jpg" alt="Combro" />
-          <div class="menu-content">
-            <h4 class="menu-title">Combro</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp1.250/pcs</strong></p>
-              <p class="menu-note">Gorengan singkong dengan isian oncom pedas</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dadar Gulung Pisang Coklat -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
-          <img src="imgs/Dadar Gulung Pisang Coklat.jpg" alt="Dadar Gulung Pisang Coklat" />
-          <div class="menu-content">
-            <h4 class="menu-title">Dadar Gulung Pisang Coklat</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp1.250/pcs</strong></p>
-              <p class="menu-note">Dadar gulung dengan isian pisang dan coklat</p>
-            </div>
-          </div>
-        </div>
-
+        
         <!-- Dadar Gulung -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional" data-availability="popular">
           <img src="imgs/Dadar Gulung.jpg" alt="Dadar Gulung" />
           <div class="menu-content">
             <h4 class="menu-title">Dadar Gulung</h4>
@@ -123,45 +134,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Donat Gula Halus -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
-          <img src="imgs/Donat Gula Halus.jpg" alt="Donat Gula Halus" />
-          <div class="menu-content">
-            <h4 class="menu-title">Donat Gula Halus</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
-              <p class="menu-note">Donat empuk dengan taburan gula halus</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Galunggeng -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
-          <img src="imgs/Galunggeng.jpg" alt="Galunggeng" />
-          <div class="menu-content">
-            <h4 class="menu-title">Galunggeng</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp2.500/pcs</strong></p>
-              <p class="menu-note">Kue tradisional dengan bentuk khas</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Jongkong Mutiara -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
-          <img src="imgs/Jongkong Mutiara.jpg" alt="Jongkong Mutiara" />
-          <div class="menu-content">
-            <h4 class="menu-title">Jongkong Mutiara</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
-              <p class="menu-note">Kue dengan sagu mutiara dan santan</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Klepon -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+                <!-- Klepon -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional" data-availability="popular">
           <img src="imgs/Klepon.jpg" alt="Klepon" />
           <div class="menu-content">
             <h4 class="menu-title">Klepon</h4>
@@ -170,10 +144,8 @@
               <p class="menu-note">Kue bola hijau dengan isian gula merah</p>
             </div>
           </div>
-        </div>
-
-        <!-- Kue Hunkwe -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        </div>        <!-- Kue Hunkwe -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional">
           <img src="imgs/Kue Hunkwe.jpg" alt="Kue Hunkwe" />
           <div class="menu-content">
             <h4 class="menu-title">Kue Hunkwe</h4>
@@ -183,9 +155,29 @@
             </div>
           </div>
         </div>
-
+        <!-- Donat Gula Halus -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional">
+          <img src="imgs/Donat Gula Halus.jpg" alt="Donat Gula Halus" />
+          <div class="menu-content">
+            <h4 class="menu-title">Donat Gula Halus</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
+              <p class="menu-note">Donat empuk dengan taburan gula halus</p>
+            </div>
+          </div>
+        </div>        <!-- Galunggeng -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="tradisional">
+          <img src="imgs/Galunggeng.jpg" alt="Galunggeng" />
+          <div class="menu-content">
+            <h4 class="menu-title">Galunggeng</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp2.500/pcs</strong></p>
+              <p class="menu-note">Kue tradisional dengan bentuk khas</p>
+            </div>
+          </div>
+        </div>
         <!-- Kue Lumpur Kentang -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="tradisional">
           <img src="imgs/Kue lumpur kentang.jpg" alt="Kue Lumpur Kentang" />
           <div class="menu-content">
             <h4 class="menu-title">Kue Lumpur Kentang</h4>
@@ -194,10 +186,8 @@
               <p class="menu-note">Kue lembut berbahan kentang</p>
             </div>
           </div>
-        </div>
-
-        <!-- Kue Mendut -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
+        </div>        <!-- Kue Mendut -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="tradisional">
           <img src="imgs/kue mendut.jpg" alt="Kue Mendut" />
           <div class="menu-content">
             <h4 class="menu-title">Kue Mendut</h4>
@@ -206,10 +196,8 @@
               <p class="menu-note">Kue tradisional dengan isian gula</p>
             </div>
           </div>
-        </div>
-
-        <!-- Kue Pitik -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        </div>        <!-- Kue Pitik -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional">
           <img src="imgs/kue pitik.jpg" alt="Kue Pitik" />
           <div class="menu-content">
             <h4 class="menu-title">Kue Pitik</h4>
@@ -218,10 +206,8 @@
               <p class="menu-note">Kue tradisional dengan bentuk unik</p>
             </div>
           </div>
-        </div>
-
-        <!-- Kue Pukis -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        </div>        <!-- Kue Pukis -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional">
           <img src="imgs/Kue pukis.jpg" alt="Kue Pukis" />
           <div class="menu-content">
             <h4 class="menu-title">Kue Pukis</h4>
@@ -230,10 +216,8 @@
               <p class="menu-note">Kue tradisional dengan tekstur lembut</p>
             </div>
           </div>
-        </div>
-
-        <!-- Kue Timus -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
+        </div>        <!-- Kue Timus -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="tradisional">
           <img src="imgs/Kue timus.jpg" alt="Kue Timus" />
           <div class="menu-content">
             <h4 class="menu-title">Kue Timus</h4>
@@ -243,45 +227,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Lemper Bakar -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
-          <img src="imgs/Lemper Bakar.jpg" alt="Lemper Bakar" />
-          <div class="menu-content">
-            <h4 class="menu-title">Lemper Bakar</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp1.500/pcs</strong></p>
-              <p class="menu-note">Ketan dengan isian ayam yang dipanggang</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Lepet Jagung -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
-          <img src="imgs/Lepet Jagung.jpg" alt="Lepet Jagung" />
-          <div class="menu-content">
-            <h4 class="menu-title">Lepet Jagung</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
-              <p class="menu-note">Kue tradisional berbahan dasar jagung</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Martabak Asin -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
-          <img src="imgs/Martabak Asin.jpg" alt="Martabak Asin" />
-          <div class="menu-content">
-            <h4 class="menu-title">Martabak Asin</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp2.500/pcs</strong></p>
-              <p class="menu-note">Martabak dengan isian daging dan telur</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Martabak -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
+<!-- Martabak -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="tradisional" data-availability="popular">
           <img src="imgs/Martabak.jpg" alt="Martabak" />
           <div class="menu-content">
             <h4 class="menu-title">Martabak Manis</h4>
@@ -293,7 +240,7 @@
         </div>
 
         <!-- Molen -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="tradisional">
           <img src="imgs/Molen.jpg" alt="Molen" />
           <div class="menu-content">
             <h4 class="menu-title">Molen</h4>
@@ -305,7 +252,7 @@
         </div>
 
         <!-- Nagasari -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional">
           <img src="imgs/Nagasari.jpg" alt="Nagasari" />
           <div class="menu-content">
             <h4 class="menu-title">Nagasari</h4>
@@ -317,7 +264,7 @@
         </div>
 
         <!-- Onde-onde -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional">
           <img src="imgs/Onde@.jpg" alt="Onde-onde" />
           <div class="menu-content">
             <h4 class="menu-title">Onde-onde</h4>
@@ -327,33 +274,9 @@
             </div>
           </div>
         </div>
-
-        <!-- Pastel Ayam -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
-          <img src="imgs/Pastel Ayam.jpg" alt="Pastel Ayam" />
-          <div class="menu-content">
-            <h4 class="menu-title">Pastel Ayam</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp1.500/pcs</strong></p>
-              <p class="menu-note">Pastel renyah dengan isian ayam</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pastel Sayur -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
-          <img src="imgs/Pastel Sayur.jpg" alt="Pastel Sayur" />
-          <div class="menu-content">
-            <h4 class="menu-title">Pastel Sayur</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
-              <p class="menu-note">Pastel renyah dengan isian sayuran</p>
-            </div>
-          </div>
-        </div>
-
+        
         <!-- Piscok -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional" data-availability="new">
           <img src="imgs/Piscok.jpg" alt="Pisang Cokelat" />
           <div class="menu-content">
             <h4 class="menu-title">Pisang Cokelat</h4>
@@ -365,7 +288,7 @@
         </div>
 
         <!-- Putu Ayu -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional">
           <img src="imgs/Putu Ayu.jpg" alt="Putu Ayu" />
           <div class="menu-content">
             <h4 class="menu-title">Putu Ayu</h4>
@@ -374,10 +297,8 @@
               <p class="menu-note">Kue tradisional dengan taburan kelapa</p>
             </div>
           </div>
-        </div>
-
-        <!-- Putu Mayang -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
+        </div>        <!-- Putu Mayang -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="tradisional">
           <img src="imgs/Putu Mayang.jpg" alt="Putu Mayang" />
           <div class="menu-content">
             <h4 class="menu-title">Putu Mayang</h4>
@@ -387,21 +308,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Risol Sayur -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
-          <img src="imgs/Risol Sayur.jpg" alt="Risol Sayur" />
-          <div class="menu-content">
-            <h4 class="menu-title">Risol Sayur</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
-              <p class="menu-note">Risol dengan isian ragout sayuran</p>
-            </div>
-          </div>
-        </div>
-
         <!-- Serabi Inggris -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional">
           <img src="imgs/Serabi Inggris.jpg" alt="Serabi Inggris" />
           <div class="menu-content">
             <h4 class="menu-title">Serabi Inggris</h4>
@@ -413,7 +321,7 @@
         </div>
 
         <!-- Serabi Jawa -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional" data-availability="recommended">
           <img src="imgs/Serabi Jawa.jpg" alt="Serabi Jawa" />
           <div class="menu-content">
             <h4 class="menu-title">Serabi Jawa</h4>
@@ -424,20 +332,8 @@
           </div>
         </div>
 
-        <!-- Sosis Telor -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
-          <img src="imgs/Sosis Telor.jpg" alt="Sosis Telor" />
-          <div class="menu-content">
-            <h4 class="menu-title">Sosis Telur</h4>
-            <div>
-              <p class="menu-price">Harga mulai <strong>Rp2.500/pcs</strong></p>
-              <p class="menu-note">Roti gulung dengan isian sosis dan telur</p>
-            </div>
-          </div>
-        </div>
-
         <!-- Talam -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="tradisional">
           <img src="imgs/Talam.jpg" alt="Talam" />
           <div class="menu-content">
             <h4 class="menu-title">Talam</h4>
@@ -449,7 +345,7 @@
         </div>
 
         <!-- Wajik -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional">
           <img src="imgs/Wajik.jpg" alt="Wajik" />
           <div class="menu-content">
             <h4 class="menu-title">Wajik</h4>
@@ -459,21 +355,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Bakwan Sayur -->
-        <div class="menu-tile" data-aos="fade-up">
-          <img src="imgs/Bakwan Sayur_Rp 1000.jpg" alt="Bakwan Sayur" />
-          <div class="menu-content">
-            <h4 class="menu-title">Bakwan Sayur</h4>
-            <div>
-              <p class="menu-price">Harga <strong>Rp1.000/pcs</strong></p>
-              <p class="menu-note">Gorengan berbahan sayuran segar</p>
-            </div>
-          </div>
-        </div>
-
         <!-- Bolen Pisang -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="tradisional">
           <img src="imgs/Bolen Pisang_Rp 2000.jpg" alt="Bolen Pisang" />
           <div class="menu-content">
             <h4 class="menu-title">Bolen Pisang</h4>
@@ -485,7 +368,7 @@
         </div>
 
         <!-- Bolu Gulung -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional">
           <img src="imgs/Bolu Gulung_Rp 1500.jpg" alt="Bolu Gulung" />
           <div class="menu-content">
             <h4 class="menu-title">Bolu Gulung</h4>
@@ -497,7 +380,7 @@
         </div>
 
         <!-- Cenil -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional">
           <img src="imgs/Cenil_Rp 1000.jpg" alt="Cenil" />
           <div class="menu-content">
             <h4 class="menu-title">Cenil</h4>
@@ -509,7 +392,7 @@
         </div>
 
         <!-- Gabin Tape -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="tradisional">
           <img src="imgs/Gabin Tape_ Rp 1500.jpg" alt="Gabin Tape" />
           <div class="menu-content">
             <h4 class="menu-title">Gabin Tape</h4>
@@ -521,7 +404,7 @@
         </div>
 
         <!-- Kue Cucur -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="tradisional">
           <img src="imgs/Kue Cucur_Rp 1500.jpg" alt="Kue Cucur" />
           <div class="menu-content">
             <h4 class="menu-title">Kue Cucur</h4>
@@ -530,10 +413,8 @@
               <p class="menu-note">Kue tradisional dengan tekstur unik dan aroma gula merah</p>
             </div>
           </div>
-        </div>
-
-        <!-- Kue Ku -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        </div>        <!-- Kue Ku -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional" data-availability="recommended">
           <img src="imgs/Kue Ku_Rp 1500.jpg" alt="Kue Ku" />
           <div class="menu-content">
             <h4 class="menu-title">Kue Ku</h4>
@@ -545,7 +426,7 @@
         </div>
 
         <!-- Kue Manja -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional">
           <img src="imgs/Kue Manja_Rp 1000.jpg" alt="Kue Manja" />
           <div class="menu-content">
             <h4 class="menu-title">Kue Manja</h4>
@@ -557,7 +438,7 @@
         </div>
 
         <!-- Lapis Pelangi -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="tradisional" data-availability="popular">
           <img src="imgs/Lapis Pelangi_Rp 1500.jpg" alt="Lapis Pelangi" />
           <div class="menu-content">
             <h4 class="menu-title">Lapis Pelangi</h4>
@@ -567,33 +448,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Lumpia Bihun -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
-          <img src="imgs/Lumpia Bihun_Rp 2000.jpg" alt="Lumpia Bihun" />
-          <div class="menu-content">
-            <h4 class="menu-title">Lumpia Bihun</h4>
-            <div>
-              <p class="menu-price">Harga <strong>Rp2.000/pcs</strong></p>
-              <p class="menu-note">Lumpia dengan isian bihun dan sayuran</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mendoan -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
-          <img src="imgs/Mendoan_Rp 1000.jpg" alt="Mendoan" />
-          <div class="menu-content">
-            <h4 class="menu-title">Mendoan</h4>
-            <div>
-              <p class="menu-price">Harga <strong>Rp1.000/pcs</strong></p>
-              <p class="menu-note">Tempe tipis dengan tepung yang renyah di luar namun lembut di dalam</p>
-            </div>
-          </div>
-        </div>
-
         <!-- Pae Buah -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="tradisional" data-availability="new">
           <img src="imgs/Pae Buah_Rp2500.jpg" alt="Pae Buah" />
           <div class="menu-content">
             <h4 class="menu-title">Pae Buah</h4>
@@ -605,7 +461,7 @@
         </div>
 
         <!-- Puding Telor Ceplok -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="tradisional" data-availability="recommended">
           <img src="imgs/Puding Telor Ceplok_Rp 1500.jpg" alt="Puding Telor Ceplok" />
           <div class="menu-content">
             <h4 class="menu-title">Puding Telor Ceplok</h4>
@@ -615,9 +471,167 @@
             </div>
           </div>
         </div>
+                          <!-- Jongkong Mutiara -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="tradisional">
+          <img src="imgs/Jongkong Mutiara.jpg" alt="Jongkong Mutiara" />
+          <div class="menu-content">
+            <h4 class="menu-title">Jongkong Mutiara</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
+              <p class="menu-note">Kue dengan sagu mutiara dan santan</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lepet Jagung -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="tradisional">
+          <img src="imgs/Lepet Jagung.jpg" alt="Lepet Jagung" />
+          <div class="menu-content">
+            <h4 class="menu-title">Lepet Jagung</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
+              <p class="menu-note">Kue tradisional berbahan dasar jagung</p>
+            </div>
+          </div>
+        </div>        
 
-        <!-- Sosis Solo (2000) -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
+
+        <!-- Menu Category: Gorengan & Snack -->
+        <div class="menu-category">
+          <h2>🍤 Gorengan & Snack</h2>
+          <p>Aneka gorengan renyah dan snack lezat untuk menemani waktu santai Anda</p>
+        </div>
+
+        <!-- Combro -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="gorengan">
+          <img src="imgs/Combro.jpg" alt="Combro" />
+          <div class="menu-content">
+            <h4 class="menu-title">Combro</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp1.250/pcs</strong></p>
+              <p class="menu-note">Gorengan singkong dengan isian oncom pedas</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dadar Gulung Pisang Coklat -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="gorengan" data-availability="new">
+          <img src="imgs/Dadar Gulung Pisang Coklat.jpg" alt="Dadar Gulung Pisang Coklat" />
+          <div class="menu-content">
+            <h4 class="menu-title">Dadar Gulung Pisang Coklat</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp1.250/pcs</strong></p>
+              <p class="menu-note">Dadar gulung dengan isian pisang dan coklat</p>
+            </div>
+          </div>
+        </div><!-- Lemper Bakar -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="gorengan" data-availability="recommended">
+          <img src="imgs/Lemper Bakar.jpg" alt="Lemper Bakar" />
+          <div class="menu-content">
+            <h4 class="menu-title">Lemper Bakar</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp1.500/pcs</strong></p>
+              <p class="menu-note">Ketan dengan isian ayam yang dipanggang</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Martabak Asin -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="gorengan" data-availability="popular">
+          <img src="imgs/Martabak Asin.jpg" alt="Martabak Asin" />
+          <div class="menu-content">
+            <h4 class="menu-title">Martabak Asin</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp2.500/pcs</strong></p>
+              <p class="menu-note">Martabak dengan isian daging dan telur</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pastel Ayam -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="gorengan">
+          <img src="imgs/Pastel Ayam.jpg" alt="Pastel Ayam" />
+          <div class="menu-content">
+            <h4 class="menu-title">Pastel Ayam</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp1.500/pcs</strong></p>
+              <p class="menu-note">Pastel renyah dengan isian ayam</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pastel Sayur -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="gorengan">
+          <img src="imgs/Pastel Sayur.jpg" alt="Pastel Sayur" />
+          <div class="menu-content">
+            <h4 class="menu-title">Pastel Sayur</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
+              <p class="menu-note">Pastel renyah dengan isian sayuran</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Risol Sayur -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="gorengan">
+          <img src="imgs/Risol Sayur.jpg" alt="Risol Sayur" />
+          <div class="menu-content">
+            <h4 class="menu-title">Risol Sayur</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp1.000/pcs</strong></p>
+              <p class="menu-note">Risol dengan isian ragout sayuran</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sosis Telor -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="gorengan" data-availability="popular">
+          <img src="imgs/Sosis Telor.jpg" alt="Sosis Telor" />
+          <div class="menu-content">
+            <h4 class="menu-title">Sosis Telur</h4>
+            <div>
+              <p class="menu-price">Harga mulai <strong>Rp2.500/pcs</strong></p>
+              <p class="menu-note">Roti gulung dengan isian sosis dan telur</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bakwan Sayur -->
+        <div class="menu-tile" data-aos="fade-up" data-category="gorengan" data-availability="popular">
+          <img src="imgs/Bakwan Sayur_Rp 1000.jpg" alt="Bakwan Sayur" />
+          <div class="menu-content">
+            <h4 class="menu-title">Bakwan Sayur</h4>
+            <div>
+              <p class="menu-price">Harga <strong>Rp1.000/pcs</strong></p>
+              <p class="menu-note">Gorengan berbahan sayuran segar</p>
+            </div>
+          </div>
+        </div>
+
+                <!-- Lumpia Bihun -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="gorengan" data-availability="popular">
+          <img src="imgs/Lumpia Bihun_Rp 2000.jpg" alt="Lumpia Bihun" />
+          <div class="menu-content">
+            <h4 class="menu-title">Lumpia Bihun</h4>
+            <div>
+              <p class="menu-price">Harga <strong>Rp2.000/pcs</strong></p>
+              <p class="menu-note">Lumpia dengan isian bihun dan sayuran</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mendoan -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="gorengan" data-availability="popular">
+          <img src="imgs/Mendoan_Rp 1000.jpg" alt="Mendoan" />
+          <div class="menu-content">
+            <h4 class="menu-title">Mendoan</h4>
+            <div>
+              <p class="menu-price">Harga <strong>Rp1.000/pcs</strong></p>
+              <p class="menu-note">Tempe tipis dengan tepung yang renyah di luar namun lembut di dalam</p>
+            </div>
+          </div>
+        </div>                <!-- Sosis Solo (2000) -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="gorengan" data-availability="popular">
           <img src="imgs/Sosis Solo_Rp 2000.jpg" alt="Sosis Solo" />
           <div class="menu-content">
             <h4 class="menu-title">Sosis Solo Regular</h4>
@@ -629,7 +643,7 @@
         </div>
 
         <!-- Sosis Solo (2500) -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="gorengan" data-availability="recommended">
           <img src="imgs/Sosis Solo_Rp 2500.jpg" alt="Sosis Solo Spesial" />
           <div class="menu-content">
             <h4 class="menu-title">Sosis Solo Spesial</h4>
@@ -638,34 +652,20 @@
               <p class="menu-note">Gorengan dadar isi daging sapi cincang dengan porsi ekstra</p>
             </div>
           </div>
-        </div>
-
-        <!-- Susu Kedelai -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
-          <img src="imgs/Susu Kedelai_Rp 1000.jpg" alt="Susu Kedelai" />
-          <div class="menu-content">
-            <h4 class="menu-title">Susu Kedelai</h4>
-            <div>
-              <p class="menu-price">Harga <strong>Rp1.000/pcs</strong></p>
-              <p class="menu-note">Minuman sehat berbahan kedelai pilihan</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tahu Ayam -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200">
+        </div>        <!-- Tahu Ayam -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="200" data-category="gorengan" data-availability="popular">
           <img src="imgs/Tahu Ayam_Rp 1500.jpg" alt="Tahu Ayam" />
           <div class="menu-content">
             <h4 class="menu-title">Tahu Ayam</h4>
             <div>
-              <p class="menu-price">Harga <strong>Rp1.500/pcs</strong></p>
+              <p class="menu-price">Harga mulai <strong>Rp1.500/pcs</strong></p>
               <p class="menu-note">Tahu berisi adonan ayam dengan bumbu pilihan</p>
             </div>
           </div>
         </div>
 
         <!-- Tahu Bakso -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="gorengan" data-availability="popular">
           <img src="imgs/Tahu Bakso_Rp 2000.jpg" alt="Tahu Bakso" />
           <div class="menu-content">
             <h4 class="menu-title">Tahu Bakso</h4>
@@ -677,7 +677,7 @@
         </div>
 
         <!-- Tahu Brontak -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="100" data-category="gorengan" data-availability="recommended">
           <img src="imgs/Tahu Brontak_Rp 1000.jpg" alt="Tahu Brontak" />
           <div class="menu-content">
             <h4 class="menu-title">Tahu Brontak</h4>
@@ -689,7 +689,7 @@
         </div>
 
         <!-- Tahu Sarang Burung -->
-        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150">
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="150" data-category="gorengan">
           <img src="imgs/Tahu Sarang Burung_Rp 1500.jpg" alt="Tahu Sarang Burung" />
           <div class="menu-content">
             <h4 class="menu-title">Tahu Sarang Burung</h4>
@@ -699,8 +699,35 @@
             </div>
           </div>
         </div>
+        
+        <!-- Menu Category: Minuman -->
+        <div class="menu-category">
+          <h2>🥤 Minuman</h2>
+          <p>Minuman segar dan sehat untuk menemani camilan Anda</p>
+        </div>
+
+        <!-- Susu Kedelai -->
+        <div class="menu-tile" data-aos="fade-up" data-aos-delay="50" data-category="minuman" data-availability="recommended">
+          <img src="imgs/Susu Kedelai_Rp 1000.jpg" alt="Susu Kedelai" />
+          <div class="menu-content">
+            <h4 class="menu-title">Susu Kedelai</h4>
+            <div>
+              <p class="menu-price">Harga <strong>Rp1.000/pcs</strong></p>
+              <p class="menu-note">Minuman sehat berbahan kedelai pilihan</p>
+            </div>
+          </div>
+        </div>
 
         
+      </div>
+
+      <!-- Enhanced Explore More Section -->
+      <div class="explore-more-container">
+        <h3>Masih Belum Menemukan yang Anda Cari?</h3>
+        <p>Hubungi kami untuk konsultasi menu khusus atau pesanan dalam jumlah besar. Kami siap membantu mewujudkan acara impian Anda!</p>
+        <a href="index.html#contact" class="btn-secondary">
+          <i class="fas fa-phone"></i> Hubungi Kami
+        </a>
       </div>
     </section>
   </main>
