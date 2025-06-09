@@ -54,21 +54,26 @@ document.addEventListener('DOMContentLoaded', function() {
       closeMobileMenu();
     }
   });
-  
-  // Smooth scroll for navigation links
+    // Smooth scroll for navigation links (only same-page navigation)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      e.preventDefault();
+      const href = this.getAttribute('href');
       
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80, // Account for fixed header
-          behavior: 'smooth'
-        });
+      // Only handle same-page navigation (links that start directly with #)
+      // Don't interfere with cross-page navigation (like index.html#contact)
+      if (href.startsWith('#') && !href.includes('.html')) {
+        e.preventDefault();
+        
+        const targetElement = document.querySelector(href);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Account for fixed header
+            behavior: 'smooth'
+          });
+        }
       }
+      // For cross-page navigation, let the browser handle it naturally
     });
   });
   
@@ -429,15 +434,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initialize stats
   updateMenuStats();
-
-  // Smooth scroll enhancement for menu navigation
-  const menuLinks = document.querySelectorAll('a[href*="#"]');
+  // Smooth scroll enhancement for menu navigation (same-page only)
+  const menuLinks = document.querySelectorAll('a[href^="#"]');
   menuLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
-      if (href.includes('#')) {
+      // Only handle same-page navigation (href starts with # and no .html)
+      if (href.startsWith('#') && !href.includes('.html')) {
         e.preventDefault();
-        const targetId = href.split('#')[1];
+        const targetId = href.substring(1); // Remove the # symbol
         const targetElement = document.getElementById(targetId);
         
         if (targetElement) {
@@ -448,8 +453,8 @@ document.addEventListener('DOMContentLoaded', function() {
             top: targetPosition,
             behavior: 'smooth'
           });
-        }
-      }
+        }      }
+      // Let cross-page navigation (like index.html#contact) work naturally
     });
   });
 });

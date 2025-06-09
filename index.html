@@ -926,9 +926,7 @@
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
-    }
-
-    /* Scroll progress indicator */
+    }    /* Scroll progress indicator */
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -937,7 +935,28 @@
       background: #e23d3d;
       z-index: 9999;
       width: 0%;
-      transition: width 0.2s ease;    }
+      transition: width 0.2s ease;
+    }
   </style>
+
+  <script>
+    // Handle hash navigation on page load (for links from menu.html)
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.location.hash) {
+        setTimeout(function() {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            const headerHeight = document.getElementById('header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100); // Small delay to ensure page is fully loaded
+      }
+    });
+  </script>
 </body>
 </html>
