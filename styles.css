@@ -111,14 +111,21 @@ html {
   position: relative;
 }
 
-#header-img {
-  height: 50px;
+#hero-img {
+  padding-bottom: 0px;
+  height: 200px;
   transition: var(--transition);
   z-index: 1001;
 }
 
 #header-img:hover {
   transform: scale(1.05);
+}
+
+#header-img { 
+  height: 50px; 
+  width: auto;
+  object-fit: contain;
 }
 
 #nav-bar {
@@ -285,7 +292,7 @@ html {
   position: relative;
   min-height: auto;
   max-height: none;
-  padding: 4rem 0;
+  padding: 0rem 0;
   display: flex;
   align-items: center;
   background: var(--bg-hero);
