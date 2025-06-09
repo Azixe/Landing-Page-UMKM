@@ -1887,6 +1887,95 @@ html {
   }
 }
 
+/* Enhanced mobile responsiveness for menu statistics and filters - 375px and below */
+@media (max-width: 375px) {
+  /* Menu Statistics - Make much smaller */
+  .menu-stats {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+  
+  .menu-stats .stat-card {
+    min-width: 80px;
+    padding: 0.8rem 0.4rem;
+    border-radius: 8px;
+  }
+  
+  .menu-stat-number {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  /* Filter Tabs - Make smaller and stack better */
+  .filter-tabs {
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-tab {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 15px;
+    min-width: auto;
+  }
+  
+  .filter-tab.active {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  /* Search box - Make more compact */
+  .search-box {
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-box input {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+  }
+  
+  .search-box i {
+    font-size: 0.9rem;
+  }
+  
+  /* Menu page heading */
+  .section-heading {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Extra small screens (350px and below) */
+@media (max-width: 350px) {
+  .menu-stats .stat-card {
+    min-width: 70px;
+    padding: 0.6rem 0.3rem;
+  }
+  
+  .menu-stat-number {
+    font-size: 1rem !important;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  .filter-tab {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  
+  .section-heading {
+    font-size: 1.6rem;
+  }
+}
+
 /* Contact */
 #contact {
   background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-light) 100%);
